@@ -96,7 +96,6 @@ def generate_color_code(length=4):
 possibleColors = ["Blue", "Purple", "Red", "Orange", "Yellow", "Green"]
 
 def get_Feedback(secret, guess):
-    # Normaliseer input naar lowercase (voor kleurenversie)
     secret_lower = [s.lower() for s in secret]
     guess_lower = [g.lower() for g in guess]
 
@@ -174,7 +173,7 @@ def play_color_mode():
                 continue
 
             guess = user_input.split()
-            guess = [color.capitalize() for color in guess]  # Normaliseer hoofdletters
+            guess = [color.capitalize() for color in guess]  
 
             if len(guess) != 4 or not all(color in possibleColors for color in guess):
                 print("Ongeldige invoer. Voer exact 4 kleuren in uit de lijst (hoofdletterongevoelig).")
@@ -182,7 +181,7 @@ def play_color_mode():
                 valid_Guess = True
 
         black, white = get_Feedback(secret_Code, guess)
-        print(f"Black pegs (juiste kleur & plek): {black}, White pegs (juiste kleur, verkeerde plek): {white}")
+        print(f"Zwarte pionnen: {black}, Witte pionnen: {white}")
 
         if black == 4:
             print(f"Goed gedaan! Je raadde de code: {', '.join(secret_Code)}")
