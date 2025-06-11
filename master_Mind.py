@@ -48,7 +48,8 @@ def show_Secret(secret):
 def play_number_mode():
     print("Welkom bij Mastermind met cijfers!")
     print(
-        "Raad de 4-cijferige code. Elk cijfer is van 1 t/m 6. Je hebt 10 pogingen."
+        "Raad de 4-cijferige code. Elk cijfer is van 1 t/m 6. "
+        "Je hebt 10 pogingen."
     )
     secret_Code = generate_number_code()
     attempts = 10
@@ -70,7 +71,8 @@ def play_number_mode():
             valid_Guess = len(guess) == 4 and all(c in "123456" for c in guess)
             if not valid_Guess:
                 print(
-                    "Ongeldige invoer. Voer precies 4 cijfers in van 1 t/m 6."
+                    "Ongeldige invoer. Voer precies 4 cijfers in "
+                    "van 1 t/m 6."
                 )
 
         guess_list = list(guess)
@@ -82,21 +84,26 @@ def play_number_mode():
 
         if black == 4:
             print(
-                f"Gefeliciteerd! Je hebt de code geraden: "
+                "Gefeliciteerd! Je hebt de code geraden: "
                 f"{''.join(secret_Code)}"
             )
             return
 
-    print(f"Helaas, je hebt alle pogingen gebruikt. De code was: {''.join(secret_Code)}")
+    print(
+        "Helaas, je hebt alle pogingen gebruikt. "
+        f"De code was: {''.join(secret_Code)}"
+    )
 
 
 def play_color_mode():
     print("Welkom bij Mastermind met kleuren!")
     print(
-        f"Raad de juiste volgorde van 4 kleuren. Kies uit: {', '.join(possibleColors)}"
+        "Raad de juiste volgorde van 4 kleuren. Kies uit: "
+        f"{', '.join(possibleColors)}"
     )
     print(
-        "Typ je kleuren gescheiden door spaties (bijv: Red Blue Yellow Green)"
+        "Typ je kleuren gescheiden door spaties "
+        "(bijv: Red Blue Yellow Green)"
     )
     secret_Code = generate_color_code()
     attempts = 10
@@ -124,7 +131,8 @@ def play_color_mode():
                 or not all(color in possibleColors for color in guess)
             ):
                 print(
-                    "Ongeldige invoer. Voer exact 4 kleuren in uit de lijst (hoofdletterongevoelig)."
+                    "Ongeldige invoer. Voer exact 4 kleuren in uit de lijst "
+                    "(hoofdletterongevoelig)."
                 )
             else:
                 valid_Guess = True
@@ -144,7 +152,8 @@ def play_Mastermind():
     mode = ""
     while mode not in ["colors", "numbers"]:
         mode = input(
-            "Wil je spelen met kleuren of cijfers? Typ 'colors' of 'numbers': "
+            "Wil je spelen met kleuren of cijfers? "
+            "Typ 'colors' of 'numbers': "
         ).strip().lower()
 
     if mode == "colors":
