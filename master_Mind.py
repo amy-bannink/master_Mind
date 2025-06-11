@@ -82,9 +82,12 @@ def play_number_mode():
 
 
         if black == 4:
-            print(f"Gefeliciteerd! Je hebt de code geraden: 
-            {''.join(secret_Code)}")
+            print(
+                f"Gefeliciteerd! Je hebt de code geraden: "
+                f"{''.join(secret_Code)}"
+            )
             return
+
 
 
     print(f"Helaas, je hebt alle pogingen gebruikt. De code was: {''.join(secret_Code)}")
