@@ -75,8 +75,11 @@ def play_number_mode():
 
         guess_list = list(guess)
         black, white = get_Feedback(secret_Code, guess_list)
-        print(f"Black pegs (juiste plek): {black}, 
-        White pegs (verkeerde plek): {white}")
+        print(
+            f"Black pegs (juiste plek): {black}, "
+            f"White pegs (verkeerde plek): {white}"
+        )
+
 
         if black == 4:
             print(f"Gefeliciteerd! Je hebt de code geraden: 
